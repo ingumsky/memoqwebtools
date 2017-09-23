@@ -1,6 +1,7 @@
 'use strict';
 
 /*
+	Go to previous/next page
 	@isNext - Boolean value
 */
 let gotoPage = (isNext) => {
@@ -13,19 +14,21 @@ let gotoPage = (isNext) => {
 };
 
 /*
+	Go to the next segment missing translation or not confirmed yet
 	@isNext - Boolean value
 */
 let gotoEmpty = (isNext) => {
 	let editable = $(".status-cell:not(.confirmed):not(.r1confirmed):not(.r2confirmed)");
 	if (!editable.length) {
 		gotoPage(isNext);
-		setTimeout(function(){memoq.nextEmpty()}, 1000);		
+		setTimeout(() => {memoq.nextEmpty()}, 1000);		
 	} else {
 		editable[0].scrollIntoView(true);
 	}
 };
 
 /* 
+	Use one of the TM suggestions
 	@choice - row number to choose from a TM suggestion list
 */
 let useTm = (choice) => {
@@ -35,6 +38,9 @@ let useTm = (choice) => {
 	$(suggestions[choice]).dblclick();
 };
 
+/*
+	Global object with methods available
+*/
 let memoq = {
 	prevPage: 	() => gotoPage(false),
 	nextPage: 	() => gotoPage(true),
