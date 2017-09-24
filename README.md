@@ -7,3 +7,5 @@ The product in question lacks many tools needed to make translator's job easier 
 
 ## Changelog
 It's available as a Chrome extension now and, most probably, can be used with any browsers based on Chromium. 
+
+### Copyrights: Icons used are courtesy of iconsdb.com and provided as CC0 1.0 Universal (CC0 1.0) Public Domain Dedication

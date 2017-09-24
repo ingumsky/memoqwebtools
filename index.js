@@ -18,7 +18,7 @@ let gotoPage = (isNext) => {
 	@isNext - Boolean value
 */
 let gotoEmpty = (isNext) => {
-	let editable = $(".status-cell:not(.confirmed):not(.r1confirmed):not(.r2confirmed)");
+	let editable = $(".status-cell:not(.confirmed):not(.r1confirmed):not(.r2confirmed):not(:has(a.locked))");
 	if (!editable.length) {
 		gotoPage(isNext);
 		setTimeout(() => {memoq.nextEmpty()}, 1000);		
@@ -48,3 +48,10 @@ let memoq = {
 	nextEmpty: 	() => gotoEmpty(true),
 	useTm: 		useTm,
 };
+
+/*
+	Turns MemoQ WebTrans Tools menu into a draggable one
+*/
+$("#memoqwtools").draggable({
+	handle: "#memoqwtools-handle",
+});

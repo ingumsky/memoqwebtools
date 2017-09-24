@@ -19,6 +19,11 @@ cs.setAttribute("rel", "stylesheet");
 let mn = document.createElement("div");
 mn.id = "memoqwtools";
 
+let handle = document.createElement("img");
+handle.id = "memoqwtools-handle";
+handle.src = chrome.extension.getURL(`/static/handle.png`);
+handle.title = "Drag by the handle and move it around";
+mn.appendChild(handle);
 /*
 	Set of buttons with values as follows:
 	0: name of the image to be used as a button
@@ -28,7 +33,7 @@ mn.id = "memoqwtools";
 */
 let actions = [
 	["rewind.png", "Previous page", "prevPage"],
-	["play.png", "Next segment", "nextEmpty"],
+	["play.png", "Next segment to translate", "nextEmpty"],
 	["fastforward.png", "Next page", "nextPage"],
 	["1.png", "Append TM 1", "useTm", 1],
 	["2.png", "Append TM 2", "useTm", 2],

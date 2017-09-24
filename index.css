@@ -3,12 +3,11 @@
 	position: fixed;
 	bottom: 0;
 	right: 0;
-	width: 180px;
+	width: 195px;
 	height: 30px;
 	background-color: lightgrey;
-	color: white;
-	padding: 5x;
 	cursor: pointer;
+	z-index: 500;
 }
 
 /* MemoQ WebTrans Tools action button */
