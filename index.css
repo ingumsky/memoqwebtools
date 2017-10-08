@@ -1,9 +1,7 @@
 /* MemoQ WebTrans Tools action bar */
 #memoqwtools {
 	position: fixed;
-	bottom: 0;
-	right: 0;
-	width: 195px;
+	width: auto;
 	height: 30px;
 	background-color: lightgrey;
 	cursor: pointer;
@@ -13,4 +11,12 @@
 /* MemoQ WebTrans Tools action button */
 #memoqwtools img {
 	margin: 3px;
+}
+
+#memoqwtools-length {
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 30px;
+	padding: 0px 5px 5px 2px;
+	vertical-align: top;
 }

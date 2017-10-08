@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "MemoQ WebTrans Tools",
-  "version": "0.3",
+  "version": "0.3.1",
   "description": "Adds some tools to improve MemoQ WebTrans UX",
   "content_scripts": [
     {
@@ -10,7 +10,7 @@
     }
   ],
   "web_accessible_resources": ["index.js", "index.css", "static/rewind.png", "static/play.png", "static/fastforward.png", "static/1.png", "static/2.png", "static/3.png", "static/handle.png"],
-  "permissions": ["http://*.lonestar.memoq.com/", "https://*.lonestar.memoq.com/"],
+  "permissions": ["http://*.lonestar.memoq.com/", "https://*.lonestar.memoq.com/", "storage"],
   "browser_action": {
     "default_title": "",
     "default_icon": "static/icon.png",

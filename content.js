@@ -50,4 +50,14 @@ actions.map((x) => {
 	btn.setAttribute("onclick", ` memoq.${x[2]}(${ar}) `);
 	mn.appendChild(btn);	
 });
-document.body.appendChild(mn);
+
+let len = document.createElement("span");
+len.id 	= "memoqwtools-length";
+mn.appendChild(len);	
+
+chrome.storage.local.set({"top": "5px", "left": "4px"});
+chrome.storage.local.get(["top", "left"], (items) => { 
+	mn.style.top = items.top || null;
+	mn.style.left 	= items.left || null;
+	document.body.appendChild(mn);
+});
