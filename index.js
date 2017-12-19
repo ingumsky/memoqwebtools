@@ -1,29 +1,45 @@
 'use strict';
 
 /*
-	Go to previous/next page
+	Go to previous/next "page"
 	@isNext - Boolean value
+	@rows 	- Number of rows in a "page" to scroll
 */
-let gotoPage = (isNext) => {
-	const buttons = {
-		prev: document.getElementById("decrementPage"),
-		next: document.getElementById("incrementPage"),
+let gotoPage = (isNext, rows) => {
+	const 	direction = isNext ? "next" : "prev";
+	const 	buttons = {
+		prev: document.getElementsByClassName('vertical-scrollbar-up-button scrollbar-button-enabled')[0],
+		next: document.getElementsByClassName('vertical-scrollbar-down-button scrollbar-button-enabled')[0],
 	};
-	let direction = isNext ? "next" : "prev";
-	buttons[direction].click(); 
-};
+	const 	quasiClick = (node, evType) => {
+		let clickEvent = document.createEvent('MouseEvents');
+		clickEvent.initEvent(evType, true, true);
+		node.dispatchEvent(clickEvent);
+	};
+	if (buttons[direction]) {
+		if (!rows) { rows = 20; }
+		for (let i = 0; i < rows; i++) {
+			quasiClick(buttons[direction], 'mousedown');
+			quasiClick(buttons[direction], 'mouseup');
+		};
+	} else {
+		console.log("Sorry, no page to go");
+	}
+}
 
 /*
 	Go to the next segment missing translation or not confirmed yet
 	@isNext - Boolean value
 */
 let gotoEmpty = (isNext) => {
-	let editable = $(".status-cell:not(.confirmed):not(.r1confirmed):not(.r2confirmed):not(:has(a.locked))");
+	let editable = $(".status-cell:not(.confirmed):not(.r1confirmed):not(.r2confirmed):not(:has(a.locked))").prev(".translated-segment-grid").parent("tr:not(.lock):not(.not-loaded-row)");
 	if (!editable.length) {
 		gotoPage(isNext);
-		setTimeout(() => {memoq.nextEmpty()}, 1000);		
+		setTimeout(() => {memoq.nextEmpty()}, 400);
 	} else {
 		editable[0].scrollIntoView(true);
+		console.log("Found a result:", editable[0]);
+		// editable[0].click();
 	}
 };
 
