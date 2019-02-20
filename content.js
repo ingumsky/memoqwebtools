@@ -51,9 +51,27 @@ actions.map((x) => {
 	mn.appendChild(btn);	
 });
 
-let len = document.createElement("span");
-len.id 	= "memoqwtools-length";
-mn.appendChild(len);	
+/*
+	set of elements	to be added to a menu
+	0: type of an element
+	1: id of an element
+	2: alt attribute
+*/
+let chars = [
+	['span', 'memoqwtools-length', 'Number of characters'],
+	['span', 'memoqwtools-limit', 'Character limit'],
+	['div', 'memoqwtools-stringId', 'String ID'],
+	['div', 'memoqwtools-vars', 'Variables missing'],
+];
+
+// create elements and append them to MemoQ WebTrans Tools menu bar
+chars.map( x => {
+	let el 		= document.createElement(x[0]);
+	el.id 		= x[1];
+	el.title 	= x[2];
+	mn.appendChild(el);
+});
+
 
 chrome.storage.local.set({"top": "5px", "left": "4px"});
 chrome.storage.local.get(["top", "left"], (items) => { 
