@@ -20,3 +20,28 @@
 	padding: 0px 5px 5px 2px;
 	vertical-align: top;
 }
+
+#memoqwtools-limit {
+	padding: 0px 5px 5px 2px;
+	vertical-align: super;
+}
+
+.limit-exceeded {
+	color: red;
+}
+
+#memoqwtools div {
+	background-color: lightgrey;
+}
+
+#memoqwtools-vars span {
+	font-weight: 700;
+}
+
+.memoqwtools-varsmissing {
+	color: red;
+}
+
+.memoqwtools-varsredundant {
+	color: green;
+}
