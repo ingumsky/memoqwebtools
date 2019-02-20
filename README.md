@@ -7,6 +7,9 @@ The product in question lacks many tools needed to make translator's job easier 
 
 ## Changelog
 
+### 0.5.0
+1. Works with both "inifinite" pages and "classic" pages. 2. Comments are now parsed to retrieve information on string id, char limit, etc (some companies store the information there). 3. If char limit (see 2) is exceeded, a warning will be shown. 4. If there are any variables or certain elements (like "\n") are missing from the source or translation, a warning will be shown.
+
 ### 0.4.0
 Updated to be able to work with MemoQ Webtrans "infinite page" UI.
 
