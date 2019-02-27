@@ -11,8 +11,8 @@ cs.href = chrome.extension.getURL('index.css');
 cs.setAttribute('rel', 'stylesheet');
 
 // appending aforementioned <script> and <link> tags to <head>
-[s, cs].map((x) => {
-	(document.head || document.documentElement).appendChild(x);
+[scr, cs].map((el) => {
+	(document.head || document.documentElement).appendChild(el);
 });
 
 // element with MemoQ WebTrans Tools buttons
