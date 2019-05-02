@@ -118,6 +118,7 @@ const listMatches = (data, rules) => {
 		'\\${[\\w\\[\\]\\s]+}', // ea NBA LIVE: ${OVR}, ${RES2}, ${fast furious}, ${[0]}, etc.
 		'\\\\n', // ea NBA LIVE: \n
 		'%%\\w+%%', // eden games F1
+		'</?[a-zA-Z0-9=]+>', // <a>, </ab>, <23>, </g45>, <foo=5>, etc.
 	];
 	return data.match(new RegExp(RULES.join('|'), 'g')) || [];
 };
