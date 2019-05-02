@@ -45,3 +45,8 @@
 .memoqwtools-varsredundant {
 	color: green;
 }
+
+#tm_information .segment .caseInsensitiveCommon, .compare_boxes .segment .tm_information .caseInsensitiveCommon {
+	background-color: purple;
+	color: white;
+}
