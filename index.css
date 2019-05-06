@@ -58,8 +58,14 @@
 	color: white;
 }
 
-/* missing parts from fuzzies */
+/* missing parts from current in fuzzies */
 #tm_information .segment .currdelete, .compare_boxes .segment .tm_information .currdelete {
 	background-color: blue;
+	color: white;
+}
+
+/* missing parts from memory in fuzzies */
+#tm_information .segment .memdelete, .compare_boxes .segment .memdelete {
+	background-color: skyblue;
 	color: white;
 }
