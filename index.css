@@ -46,12 +46,20 @@
 	color: green;
 }
 
+/* differences in cases */
 #tm_information .segment .caseInsensitiveCommon, .compare_boxes .segment .tm_information .caseInsensitiveCommon {
 	background-color: purple;
 	color: white;
 }
 
+/* changes in fuzzies */
 #tm_information .segment .change, .compare_boxes .segment .tm_information .change {
 	background-color: red;
+	color: white;
+}
+
+/* missing parts from fuzzies */
+#tm_information .segment .currdelete, .compare_boxes .segment .tm_information .currdelete {
+	background-color: blue;
 	color: white;
 }
