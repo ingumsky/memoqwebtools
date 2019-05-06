@@ -50,3 +50,8 @@
 	background-color: purple;
 	color: white;
 }
+
+#tm_information .segment .change, .compare_boxes .segment .tm_information .change {
+	background-color: red;
+	color: white;
+}
