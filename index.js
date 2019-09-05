@@ -57,18 +57,6 @@ let useTm = (choice) => {
 	$(suggestions[choice]).dblclick();
 };
 
-
-/*
-	gets length of the segment currently edited
-	Returns the number
-*/
-let getLength = () => {
-	let ed =  $('.focused .editor-char')[0];
-	if (ed) { // segment is being edited
-		return ed.innerText.length;
-	}
-};
-
 /*
 	gets parameters (like string id, character limit, etc.)
 	returns an object with parameters
@@ -104,6 +92,18 @@ const getSource = (el, src) => {
 	if (el) {
 		return elem;
 	} return elem.text();
+};
+
+/*
+	gets length of an element
+	Returns the number or 'n/a'
+	@el - element to get the length of
+*/
+const getLength = (el) => {
+	if (el) {
+		return el.length;
+	}
+	return 'n/a';
 };
 
 /*
@@ -280,11 +280,12 @@ document.onkeyup = (obj) => {
 		@edtr - element containting text of a segment
 	*/
 	const showLimits = (lngth, limit, edtr) => {
-		const len = getLength() || 0;
+		const len = getLength(getSource()) || 0;
 		const lmt = charsLimit() || 'n/a';
+		const src = getLength(getSource(false, true));
 		const errClass = 'limit-exceeded';
 		lngth.innerText = len;
-		limit.innerText = lmt;
+		limit.innerText = `${src} (${lmt})`;
 		if (lmt < len) {
 			lngth.classList.add(errClass);
 			edtr.classList.add(errClass);
